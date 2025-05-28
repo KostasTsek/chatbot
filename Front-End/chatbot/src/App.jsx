@@ -1,10 +1,16 @@
 import sendIcon from './assets/arrow_upward.svg'
+import botAvatar from './assets/bot.png'
 import './App.css'
 
-function MessageBox() {
+function MessageBox({ sender, text }) {
+  const isUser = sender === 'user';
+
   return(
     <div className='messageBox'>
-      <div className='content'></div>
+      {!isUser && (
+        <img src={botAvatar} alt='bot' className='bot-Avatar'/>
+      )}
+      <div className='content'>{text}</div>
     </div>
     );
 }
@@ -23,7 +29,8 @@ function App() {
     <div>
       <header className='header-container'><h1>Chatbot</h1><hr/></header>
       <div className='message-container'>
-        <MessageBox/>
+        <MessageBox sender='user' text='Question'/>
+        <MessageBox sender='bot' text='Answer'/>
       </div>
       <InputBox/>
     </div>
