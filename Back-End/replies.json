@@ -1,0 +1,42 @@
+[
+    {
+        "messages": ["name", "about yourself", "who are you"],
+        "reply": "I’m Kostas, a computer science student passionate about web development, with a strong curiosity for low-level systems and how things work under the hood. I enjoy building robust web applications while also exploring the fundamentals of programming and networks. I’m eager to grow my web dev skills and contribute to impactful projects.",
+        "weight": 3.0
+    },
+    {
+        "messages": ["projects", "worked on", "past work"],
+        "reply": "I have worked on several projects, including a custom shell implementation, a micro TCP service, a Formula 1 VR game, and an unfinished website for local postings that was eventually scrapped. These experiences have strengthened my skills across systems programming, network programming, game development, and web technologies.",
+        "weight": 2.0
+    },
+    {
+        "messages": ["exprerience", "skills", "expertise"],
+        "reply": "I am skilled in programming languages like C, JavaScript, and Python, as well as in systems programming, network communication, backend development, and practical problem-solving. I’m comfortable working with both low-level code and high-level web technologies.",
+        "weight": 2.0
+    },
+    {
+        "messages": ["study", "education"],
+        "reply": "I am a student in the Computer Science Department of University Of Crete.",
+        "weight": 2.0
+    },
+    {
+        "messages": ["hobbies", "interests"],
+        "reply": "Outside of computer science, I enjoy skiing during the winter, as well as drawing and playing the bouzouki.",
+        "weight": 2.0
+    },
+    {
+        "messages": ["where", "from", "residence"],
+        "reply": "I am from Alexandria, Imathia, Greece. Currently studying in Herakleion.",
+        "weight": 2.0
+    },
+    {
+        "messages": ["hi", "hello"],
+        "reply": "Hi there!",
+        "weight": 4.0
+    },
+    {
+        "messages": ["bye", "goodbye"],
+        "reply": "Goodbye! Feel free to ask me anything anytime.",
+        "weight": 0.0
+    }
+]

@@ -62,7 +62,7 @@ Once both servers are running, open the front-end URL ```http://localhost:5173``
 
 ```json
 {
-  "message": "Hello"
+  "input": "Hello"
 }
 ```
 

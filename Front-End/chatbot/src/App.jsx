@@ -33,28 +33,30 @@ function InputBox({inputText, setInputText, onSend}) {
 function App() {
   const [messages, setMessages]= useState([]);
   const [inputText, setInputText] = useState("");
-  const [canSendMessage, setCanSendMessage] = useState(true);
 
   const messagesEndRef = useRef(null);
 
   const sendMessage = async () => {
     /* Checking if input is empty and if it is the user's turn to send a message. */
-    if(canSendMessage && inputText.trim() !== ""){
+    if(inputText.trim() !== ""){
       setMessages(prevMessages => [...prevMessages, { sender: "user", text: inputText }])
       setInputText("");
-      setCanSendMessage(false);
 
       /* Making request to the server. */
-      const response = await fetch("http://localhost:5000/chat", {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ input: inputText })
-      });
 
-      /* Getting response and updating Messages. */
-      const data = await response.json();
-      setMessages(prevMessages => [...prevMessages, { sender: "bot", text: data.reply }]);
-      setCanSendMessage(true);
+      try{
+        const response = await fetch("http://localhost:5000/chat", {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ input: inputText })
+        });
+
+        /* Getting response and updating Messages. */
+        const data = await response.json();
+        setMessages(prevMessages => [...prevMessages, { sender: "bot", text: data.reply }]);
+      }catch(e){
+        setMessages(prevMessages => [...prevMessages, { sender: "bot", text: "Something went wrong please try again." }]);
+      }
     }
   };
 
