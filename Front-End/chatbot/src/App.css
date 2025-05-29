@@ -38,7 +38,7 @@ html, body{
 
 .message-container{
   height: 70vh;
-  margin-top: 10vh;
+  margin-top: 5vh;
   display: flex;
   flex-direction: column;
   overflow-y: auto;

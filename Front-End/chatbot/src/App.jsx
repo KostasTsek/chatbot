@@ -38,18 +38,22 @@ function App() {
   const messagesEndRef = useRef(null);
 
   const sendMessage = async () => {
+    /* Checking if input is empty and if it is the user's turn to send a message. */
     if(canSendMessage && inputText.trim() !== ""){
-      setMessages([...messages, { sender: "user", text: inputText}]);
+      setMessages(prevMessages => [...prevMessages, { sender: "user", text: inputText }])
       setInputText("");
       setCanSendMessage(false);
-      const response = await fetch("http://localhost:3000/chat", {
+
+      /* Making request to the server. */
+      const response = await fetch("http://localhost:5000/chat", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ input: messages.txt })
+        body: JSON.stringify({ input: inputText })
       });
 
+      /* Getting response and updating Messages. */
       const data = await response.json();
-      setMessages([...messages, {sender: 'bot', text: data.reply}]);
+      setMessages(prevMessages => [...prevMessages, { sender: "bot", text: data.reply }]);
       setCanSendMessage(true);
     }
   };
