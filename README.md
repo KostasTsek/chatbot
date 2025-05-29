@@ -52,7 +52,7 @@ npm run dev
 ```
 
 ## Usage
-Once both servers are running, open the front-end URL (usually ```http://localhost:5173``` or whatever Vite outputs) in your browser to use the chatbot.
+Once both servers are running, open the front-end URL ```http://localhost:5173``` in your browser to use the chatbot.
 
 ## API
 
